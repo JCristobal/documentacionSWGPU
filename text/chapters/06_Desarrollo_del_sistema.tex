@@ -1,13 +1,7 @@
 \chapter{Desarrollo del sistema}
 
 \bigskip
-Describiremos cómo se ha llevado a cabo 
-(repositorios, esquemas de BD, diagramas de clases...)
-
-
-
-\section{Implementación}
-
+En este capítulo veremos la arquitectura del sistema, la \textit{filosofía} o principios seguidos y algunos detalles de la implementación.
 
 
 \newpage
@@ -17,22 +11,84 @@ Describiremos cómo se ha llevado a cabo
 \section{Partes del sistema}
 
 \newpage
-\section{Praxis}
+\section{Filosofía a seguir}
+\bigskip
+A la hora de implementar y de realizar el trabajo en general se ha intentado ser lo más ordenado y pulcro posible, esto en un principio  puede ralentizar el proceso, pero a largo plazo hace que el desarrollo, actualización o mantenimiento del sistema sea más rápido y fácil. Estos son algunos de los criterios empleados en el desarrollo.
 
-\subsection{Control de versiones}
-
-\subsection{Modularización}
-
-\subsection{Desarrollo iterativo incremental}
-
-\subsection{Revisiones periódicas del código}
-
-\subsection{Documentación del código}
-
+\bigskip
 \subsection{Desarrollo general}
+\bigskip
+
+Las funciones del sistema se han desarrollado de la manera más general posible para así favorecer la reutilización de código y facilitar su legibilidad. También son más fáciles de mantener puesto que al ser de ámbito más general son más mantenibles.
+
+\bigskip
+\subsection{Modularización}
+\bigskip
+
+Se ha desarrollado el código en distintos módulos. De esta forma se evita que al hacer cambios en un módulo se propague a los demás, lo que hace el código más mantenible y eficiente.
+
+\bigskip
+\subsection{Control de versiones}
+\bigskip
+
+Se apostó por un sistema de control de versiones, en mi caso Git mediante la plataforma GitHub, ya que favorece el mantenimiento de las distintas versiones de código de una manera sencilla y rápida.
+
+El manejo de Git es sencillo, ya que con unas cuantas ordenes se puede manejar sin problemas, y GitHub está provisto de una interfaz muy intuitiva. Algunas de las órdenes iniciales para su manejo son:
+
+git clone[url del proyecto]: descargamos el proyecto del repositorio Git.
+
+git add [archivos]: añade los archivos con los cambios deseados en un "paquete" para el commit.
+
+git commit: subida de los archivos especificados al repositorio local, a diferencia de otros sistemas como SVN con el commit no se propaga el cambio.
+
+git push:  propaga los cambios locales al repositorio.
+
+git pull origin: Actualiza la versión del código.
+
+git status: muestra el estado de los archivos.
+
+\bigskip
+\subsection{Desarrollo iterativo incremental}
+\bigskip
+
+El desarrollo de las funcionalidades se hace de forma progresiva, de modo que primero se implementan las más críticas y prioritarias en primer lugar para poder tener siempre un producto funcional.
+
+\bigskip
+\subsection{Revisiones periódicas del código}
+\bigskip
+
+El código es revisado tras cada interacción de desarrollo con el fin de mantenerlo lo más pulcro y estructurado posible. De este modo evitamos repeticiones en el código o dejar partes incompletas. Así proporcionamos un mayor nivel de calidad a código producido.
+
+\bigskip
+\subsection{Documentación del código}
+\bigskip
+
+El código a sido documentado, de modo que es más mantenible por terceros y por el mismo autor. Cada funcionalidad ha sido detallada debidamente, de manera clara y concisa, sin extender demasiado la explicación.
+
 
 \newpage
 \section{Codificación y estructuración}
 
+\bigskip
+\subsection{FrontEnd}
+\bigskip
+
+
+
+\bigskip
+\subsection{BackEnd}
+\bigskip
+
+
+
+\bigskip
+\subsection{Ejecutables a usar por el BackEnd}
+\bigskip
+
+
+
 \newpage
 \section{Pruebas}
+
+
+
