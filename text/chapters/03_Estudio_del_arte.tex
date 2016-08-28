@@ -1,16 +1,44 @@
 \chapter{Estudio del arte}
-
 \bigskip
-En la actualidad..
+
+Son muchos y muy variados los ámbitos en los que se usan los algoritmos genéticos. Sirven para crear componentes automovilísticos, analizar expresiones de genes o hasta desarrollar aprendizajes de comportamiento para robots.
+
+Esto hace que se estudie y se intente mejorar y optimizar dichos algoritmos, siendo un campo con mucha transcendencia en la actualidad.
+
+Aún así, en los primeros años de los algoritmos genéticos, se estudiaron y se lograron las ideas básicas que ahora se intentan mejorar. Constan de varias partes, como la selección de candidatos, operadores de cruce, funciones de evaluación y optimización o mutación.
+
+En este trabajo nos centraremos en la parte de optimización, donde se evalúan los individuos generados y que serán posibles soluciones al problema.
+
+En 1987 Ackley realiza un trabajo donde añade una función de optimización.
+[completar !!! ]
+
+Años antes, en 1974, Rastringin en "Systems of extremal control." propone otra función de optimización, para ser generalizada en 1991 por Mühlenbein.
+[completar !!! ]
+
+
+En este trabajo nos centraremos en estas 2 funciones.  
 
 \newpage
 \section{Actualidad}
+\bigskip
+
+En la actualidad la mayoría de los usuarios que necesitan procesar un algoritmo genético lo hacen ellos mismos, con programas adaptados de terceros o desarrollados por ellos mismos. Esto conlleva un trabajo extra de estudio, implementación y corrección de dichos programas. 
+
+Podemos encontrar algunos programas \cite{agpython} \cite{agjava} \cite{agmatlab} para ser ejecutados por el cliente, o servicios web que realizan algoritmos genéticos donde la mayoría son ejemplos o demostraciones de algoritmos genéticos y sus soluciones \cite{agandar} \cite{agcoche}.
+
+Pero ninguno usa la computación paralela aprovechando la potencia de las GPUs. En este campo hay algunos proveedores \cite{cudaimpact} \cite{cudagpuocelot} que ofrecen herramientas para la computación de algoritmos estándar o del código que genere el usuario, pero  realizando el cómputo desde las GPUs de los clientes, y nunca enfocados específicamente a resolver algoritmos genéticos.
+
+Otras opciones nos permiten ejecutar CUDA en servidores externos, pero se necesita enviar una solicitud de uso y adaptarse a sus restricciones y capacidad \cite{rcuda}
+o desplegar toda una instancia en un IaaS y desarrollar dentro \cite{amazoncuda}.
+
+
+Con esto vemos que podemos encontrar servicios que realicen algoritmos genéticos, o servicios que usen CUDA, pero no hay servicios que combinen ambos.
+
 
 \bigskip
-...
-
-\newpage
 \section{Clientes}
+\bigskip
+
 
 \newpage
 \section{Competidores}
