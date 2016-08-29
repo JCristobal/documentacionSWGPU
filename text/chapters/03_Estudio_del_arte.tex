@@ -26,10 +26,28 @@ En la actualidad la mayoría de los usuarios que necesitan procesar un algoritmo
 
 Podemos encontrar algunos programas \cite{agpython} \cite{agjava} \cite{agmatlab} para ser ejecutados por el cliente, o servicios web que realizan algoritmos genéticos donde la mayoría son ejemplos o demostraciones de algoritmos genéticos y sus soluciones \cite{agandar} \cite{agcoche}.
 
-Pero ninguno usa la computación paralela aprovechando la potencia de las GPUs. En este campo hay algunos proveedores \cite{cudaimpact} \cite{cudagpuocelot} que ofrecen herramientas para la computación de algoritmos estándar o del código que genere el usuario, pero  realizando el cómputo desde las GPUs de los clientes, y nunca enfocados específicamente a resolver algoritmos genéticos.
 
-Otras opciones nos permiten ejecutar CUDA en servidores externos, pero se necesita enviar una solicitud de uso y adaptarse a sus restricciones y capacidad \cite{rcuda}
-o desplegar toda una instancia en un IaaS y desarrollar dentro \cite{amazoncuda}.
+Pero ninguno usa la computación paralela aprovechando la potencia de las GPUs. Viendo que hay disponible en el ámbito de dicha paralelización vemos que hay grandes empresas que han lanzado lenguajes de programación enfocados a aprovechar el procesamiento mediante la GPU: CUDA \cite{nvidiacuda}, AMD OpenCL APP \cite{paralelizacionamd}, BrookGPU \cite{brookgpu}, PeakStream o RapidMind:
+
+\begin{itemize}
+	\item CUDA: arquitectura de cálculo paralelo de NVIDIA. Se basa en el lenguaje C y C++, por lo que, junto con la cantidad de dispositivos de la marca, existe una gran comunidad y documentación.
+	
+	\item AMD OpenCL™ Accelerated Parallel Processing: herramienta de AMD que permite el cómputo mediante GPUs. Se basa en los lenguajes OpenCL y C++, por lo que se pueden usar para acelarar aplicaciones.
+	
+	\item BrookGPU: programa (en versión \textit{beta}) de la Universidad de Stanford para aprovechar la paralelización en tarjetas gráficas AMD y NVIDIA. Para trabajar con el se usa una extensión de ANSI C.
+	
+	\item PeakStream era un programa para paralelizar el procesamiento con grandes rendimientos en tarjetas AMD, comprado por Google en 2007 \cite{peackstream}, y tras esto, a dejado de ofrecer mantenimiento.
+	
+	\item RapidMind, que tambíen se basa en C++, es comprada por Intel en 2009 y pasa a ser Intel Array Building Blocks \cite{rapidmind}, pero sigue estando en forma experimental. 
+	
+\end{itemize}
+
+Tras ver las distintas opciones, con sus distintas ventajas e inconvenientes, decidimos centrarnos en CUDA. Vemos que es un proyecto activo, tiene numerosas actualizaciones, cuenta con mucha comunidad para resolver dudas y fomentar su desarrollo, y tiene numerosas facilidades, como un SDK \cite{nvidiadeveloper} y varias herramientas para sus desarrolladores. Por todo esto escogemos CUDA para desarrollar nuestro trabajo.
+
+En este campo hay algunos proveedores, como Impact  \cite{cudaimpact} o gpuOcelot \cite{cudagpuocelot} que ofrecen herramientas para la computación de algoritmos estándar o del código que genere el usuario, pero  realizando el cómputo desde las GPUs de los clientes, y nunca enfocados específicamente a resolver algoritmos genéticos.
+
+Otras opciones nos permiten ejecutar CUDA en servidores externos, pero se necesita enviar una solicitud de uso y adaptarse a sus restricciones y capacidad, como en rCUDA \cite{rcuda}
+o desplegar toda una instancia en un IaaS y desarrollar dentro: Amazon Web Services \cite{amazoncuda}.
 
 
 Con esto vemos que podemos encontrar servicios que realicen algoritmos genéticos, o servicios que usen CUDA, pero no hay servicios que combinen ambos.
@@ -39,13 +57,29 @@ Con esto vemos que podemos encontrar servicios que realicen algoritmos genético
 \section{Clientes}
 \bigskip
 
+¿Que usuarios necesitan computar algoritmos genéticos?
+Por ejemplo, cualquier estudiante que quiera comprobar los cambios en los distintos parámetros del algoritmo genético.
 
-\newpage
+¿Y además algoritmos que requieran mucha capacidad de cómputo? En principio el personal de investigación cumple con estas características. Junto con la potencia de cómputo y la accesibilidad que proporcionaremos simplificaríamos el trabajo de dicho personal. 
+
+Además el servicio será accesible a cualquier usuario, y con su interfaz sencilla e intuitiva dichos usuarios no necesitarán una preparación especial para usarlo. 
+
+\bigskip
 \section{Competidores}
+\bigskip
 
-\newpage
+Como se cita antes, existen ejemplos o plantillas de algoritmos genéticos \cite{agpython} \cite{agjava} \cite{agmatlab} que los usuarios pueden usar, pero necesitan para su uso un trabajo extra para su instalación, desarrollo o ajustes. Además de este trabajo extra, se ven limitados por las capacidades de sus dispositivos, pues los algoritmos se tendrán que lanzar en local.
+
+Para evitar dichas limitaciones, podemos usar la parelelización de los algoritmos, pero los trabajos que encontramos se encuentran en una versión de CUDA obsoleta \cite{paralelizacioncuda} (y simplemente exponiendo el código) o son estudios del servicio sin llegar a ser implementado \cite{optimizacionparalelizacioncuda}. Se busca entonces un servicio que ofrezca computación desde un servidor externo. Podemos ver servicios que computan directamente CUDA \cite{rcuda} u ofrecen instancias con acceso a GPUs \cite{amazoncuda}  pero nunca especializados en algoritmos genéticos.
+
+
+\bigskip
 \section{Conclusiones}
+\bigskip
 
+Si buscamos un servicio de computación externo (que ofrezca una mayor potencia de computación usando GPUs) de algoritmos genéticos no llegamos a encontrar nada que cumpla con nuestro requisitos: o son servicios en local para lanzar algoritmos genéticos o son servicios externos que nos ofrecen computación aprovechando la paralelización de CUDA, pero sin llegar a ofrecer ninguna aproximación de un algoritmo genético.
+
+Viendo esto llegamos a una demanda que podemos cubrir con nuestro servicio, motivando a su desarrollo, implementación y creación.
 
 
 
