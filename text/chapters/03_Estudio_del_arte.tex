@@ -1,22 +1,48 @@
 \chapter{Estudio del arte}
 \bigskip
 
+Los principios básicos de los algoritmos genéticos fueron establecidos por Holland (1975), y se encuentran bien descritos en varios textos a lo largo de los años, como los estudios de Goldberg (1989), Davis (1991), Michalewicz (1992) o Reeves (1993), afianzando los conceptos y permitiendo trabajar sobre una buena base a futuros investigadores.
+
+\bigskip
 Son muchos y muy variados los ámbitos en los que se usan los algoritmos genéticos. Sirven para crear componentes automovilísticos, analizar expresiones de genes o hasta desarrollar aprendizajes de comportamiento para robots.
+
+\bigskip
+El poder de los algoritmos genéticos proviene del hecho de que se trata de una técnica robusta y tratan con éxito una gran variedad de problemas provenientes de diferentes ámbitos, incluyendo aquellos en los que otros métodos encuentran dificultades. Si bien no se garantiza que el algoritmo genético encuentre la solución óptima del problema, existe evidencia empírica de que se encuentran soluciones de un nivel aceptable, en un tiempo competitivo con el resto de los algoritmos de optimización combinatoria. En el caso de que existan técnicas especializadas para resolver un determinado problema, lo más probable es que se superen al Algoritmo genético, tanto en rapidez como eficacia. El gran campo de aplicación de los algoritmos genéticos se relaciona con aquellos problemas para los cuales no existen técnicas especializadas. Incluso en el caso en que dichas técnicas existan, y funcionen bien, pueden efectuarse mejoras de las mismas conjuntándolas con los algoritmos genéticos.
 
 Esto hace que se estudie y se intente mejorar y optimizar dichos algoritmos, siendo un campo con mucha transcendencia en la actualidad.
 
-Aún así, en los primeros años de los algoritmos genéticos, se estudiaron y se lograron las ideas básicas que ahora se intentan mejorar. Constan de varias partes, como la selección de candidatos, operadores de cruce, funciones de evaluación y optimización o mutación.
+\bigskip
+Constan de varias partes, como la selección de candidatos, operadores de cruce, funciones de evaluación y optimización o mutación. En este trabajo nos centraremos en la parte de optimización, donde se evalúan los individuos generados y que serán posibles soluciones al problema.
 
-En este trabajo nos centraremos en la parte de optimización, donde se evalúan los individuos generados y que serán posibles soluciones al problema.
+Existen multitud de funciones de optimización, pero nos centraremos en 2: Ackley y Rastrigin.
 
-En 1987 Ackley realiza un trabajo donde añade una función de optimización.
-[completar !!! ]
+\bigskip
+La función de Ackley se publicó por primera vez en "A connectionist machine for genetic hillclimbing" por David H. Ackley en 1987 y se extendió a la dimensión arbitraria en "Evolutionary algorithms in theory and practice: evolution strategies, evolutionary programming, genetic algorithms" por Thomas Bäck en 1996.
 
+\bigskip
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../images/ackley}
+	\caption[Función y representación de la función de optimización de Ackley]{Función y representación de la función de optimización de Ackley}
+	\label{fig:ackley}
+\end{figure}
+
+
+\bigskip
 Años antes, en 1974, Rastringin en "Systems of extremal control." propone otra función de optimización, para ser generalizada en 1991 por Mühlenbein.
-[completar !!! ]
 
 
-En este trabajo nos centraremos en estas 2 funciones.  
+\bigskip
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../images/rastrigin}
+	\caption[Función y representación de la función de optimización de Rastrigin]{Función y representación de la función de optimización de Rastrigin}
+	\label{fig:rastrigin}
+\end{figure}
+
+\bigskip
+En este trabajo nos centraremos en estas 2 funciones de optimización, ofreciendo un algoritmo genético que pueda ser optimizado mediante Ackley o Rastrigin.
+
 
 \newpage
 \section{Actualidad}
