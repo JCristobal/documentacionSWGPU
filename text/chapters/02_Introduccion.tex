@@ -1,9 +1,7 @@
-\chapter{Introducción, motivación y objetivos}
+\chapter{Objetivos y motivación}
 
 
-\section{Introducción}
 \bigskip
-
 Un algoritmo es una serie de pasos organizados que describe el proceso que se debe seguir, para dar solución a un problema específico. A principios de la década de 1960, en 1962 John Henry Holland ideó una de las líneas más prometedoras de la inteligencia artificial, la de los algoritmos genéticos, y con su libro "Adaptation in Natural and Artificial Systems" en 1975 logró una mayor popularidad. 
 
 Son llamados así porque se inspiran en la evolución biológica y su base genético-molecular. Estos algoritmos hacen evolucionar una población de individuos sometiéndola a acciones aleatorias semejantes a las que actúan en la evolución biológica (mutaciones y recombinaciones genéticas), así como también a una selección de acuerdo con algún criterio, en función del cual se decide cuáles son los individuos más adaptados, que sobreviven, y cuáles los menos aptos, que son descartados.
@@ -24,6 +22,26 @@ Poseen multitud de aplicaciones, como pueden ser:
 
 \bigskip
 Pueden resolver problemas de alta complejidad, pero esto suele traducirse en operaciones muy costosas en términos de tiempo y recursos. En la actualidad, por ejemplo, hay casos en los que recrear una simulación de la solución propuesta por una iteración puede durar varios días y consumir gran cantidad de procesamiento y recursos asociados.
+
+
+
+
+
+\bigskip
+\section{Objetivos}
+\bigskip
+
+
+\begin{itemize}
+	
+	\item Se desarrollarán varias clases para lanzar algoritmos genéticos que aprovechen el cálculo paralelo de alguna arquitectura de cálculo especializada (más adelante se vera que se opta por CUDA)
+	
+	\item Además se desarrollará un servicio web que interactúe con ellas. Esa infraestructura que da soporte a las llamadas del servicio debe hacer uso de una GPU. Esto hará que dichos algoritmos genéticos sean más accesibles y fáciles de usar, ya que sólo tendrán que introducir los parámetros que se deseen y lanzar el algoritmo de manera intuitiva y sin necesidad de una preparación previa.
+	
+	\item Y se estudiará la posibilidad de publicar dicho servicio para que sea accesible por cualquier usuario de Internet, dependiendo del rendimiento obtenido.
+	
+\end{itemize}
+
 
 
 \bigskip
@@ -50,29 +68,7 @@ El uso de computación paralela, junto la potencia y la posibilidad de usar el p
 
 Después del estudio realizado en el siguiente capítulo, se opta por usar la arquitectura de cálculo CUDA \cite{nvidiacuda} para crear algoritmos genéticos que se ejecuten en GPUs de NVIDIA \cite{nvidiadeveloper}.
 
-
-\bigskip
-\section{Objetivos}
-\bigskip
-
-
-Se desarrollarán varias clases para lanzar algoritmos genéticos que aprovechen el cálculo paralelo que ofrece CUDA.
-
-\bigskip
-Además se desarrollará un servicio web que interactúe con ellas. Esa infraestructura que da soporte a las llamadas del servicio debe hacer uso de una GPU. Esto hará que dichos algoritmos genéticos sean más accesibles y fáciles de usar, ya que tendrán que introducir los parámetros que se deseen y lanzar el algoritmo de manera intuitiva y sin necesidad de una preparación previa.
-
-
-\bigskip
-Analizaremos la respuesta del algoritmo que utiliza los servicios basados en GPUs respecto a los algoritmos que no la utilizan.
-
-\bigskip 
-Y se estudiará la posibilidad de publicar dicho servicio para que sea accesible por cualquier usuario de Internet, dependiendo del rendimiento obtenido.
-
-
-
-
-
-
+Como se cita en uno de los objetivos, se publicará de manera que cualquier usuario tenga acceso. Esto, junto a una interfaz sencilla, permitirá computar algoritmos genéticos con facilidad y rapidez.
 
 
 
