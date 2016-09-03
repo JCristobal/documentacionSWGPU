@@ -5,12 +5,19 @@
 
 
 \bigskip
-El objetivo principal es el desarrollo de un conjunto de clases en C++ que permitan que un servicio web interactúe con ellas. Esa infraestructura que da soporte a las llamadas del servicio debe hacer uso de una GPU, usando la arquitectura de cálculo CUDA.
+En este trabajo se aborda la creación de un conjunto de clases que permitan lanzar algoritmos genéticos y ser optimizados. Para un máximo rendimiento se paralelizarán los algoritmos, haciendo uso de una GPU.
+
+Acceder a esas funcionalidades será posible desde un servicio web que interactue con dichas clases.
+
 
 \bigskip
-Para ello implementaremos una infraestructura necesaria para crear servicios Web y la ampliaremos para crear los servicios web basados en GPUs: dicho servicio llamará a la GPU para lanzar un algoritmo evolutivo, y usar una función de evaluación mediante un algoritmo (o varios) por determinar.
+Para ello implementaremos una infraestructura de un servicios web y la ampliaremos a un servicio web que haga uso de GPUs: dicho servicio llamará a la GPU para lanzar un algoritmo evolutivo, y usar una función de evaluación mediante el algoritmo de Ackley o Rastrigin.
+
+Esa infraestructura que da soporte a las llamadas del servicio usará la arquitectura de cálculo CUDA.
 
 
+\bigskip
+Al finalizar el trabajo obtenemos un servicio web que permite lanzar algoritmos genéticos, haciendo uso de la GPU de un servidor externo mediante CUDA.
 
 
 
