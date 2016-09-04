@@ -17,7 +17,7 @@ Constan de varias partes, como la selección de candidatos, operadores de cruce,
 Existen multitud de funciones de optimización, pero nos centraremos en 2: Ackley y Rastrigin.
 
 \bigskip
-La función de Ackley se publicó por primera vez en "A connectionist machine for genetic hillclimbing" por David H. Ackley en 1987 y se extendió a la dimensión arbitraria en "Evolutionary algorithms in theory and practice: evolution strategies, evolutionary programming, genetic algorithms" por Thomas Bäck en 1996.
+La función de Ackley se publicó por primera vez en ``A connectionist machine for genetic hillclimbing`` por David H. Ackley en 1987 y se extendió a la dimensión arbitraria en ``Evolutionary algorithms in theory and practice: evolution strategies, evolutionary programming, genetic algorithms`` por Thomas Bäck en 1996.
 
 \bigskip
 \begin{figure}[h]
@@ -29,7 +29,7 @@ La función de Ackley se publicó por primera vez en "A connectionist machine fo
 
 
 \bigskip
-Años antes, en 1974, Rastringin en "Systems of extremal control." propone otra función de optimización, para ser generalizada en 1991 por Mühlenbein.
+Años antes, en 1974, Rastringin en "Systems of extremal control" propone otra función de optimización, para ser generalizada en 1991 por Mühlenbein.
 
 
 \bigskip
@@ -41,7 +41,7 @@ Años antes, en 1974, Rastringin en "Systems of extremal control." propone otra 
 \end{figure}
 
 \bigskip
-En este trabajo nos centraremos en estas 2 funciones de optimización, ofreciendo un algoritmo genético que pueda ser optimizado mediante Ackley o Rastrigin.
+Este trabajo se centrará en estas 2 funciones de optimización, ofreciendo un algoritmo genético que pueda ser optimizado mediante Ackley o Rastrigin.
 
 
 \newpage
@@ -68,7 +68,7 @@ Pero ninguno usa la computación paralela aprovechando la potencia de las GPUs. 
 	
 \end{itemize}
 
-Tras ver las distintas opciones, con sus distintas ventajas e inconvenientes, decidimos centrarnos en CUDA. Vemos que es un proyecto activo, tiene numerosas actualizaciones, cuenta con mucha comunidad para resolver dudas y fomentar su desarrollo, y tiene numerosas facilidades, como un SDK \cite{nvidiadeveloper} y varias herramientas para sus desarrolladores. Por todo esto escogemos CUDA para desarrollar nuestro trabajo.
+Tras ver las distintas opciones, con sus distintas ventajas e inconvenientes, se decide centrar en CUDA. Es un proyecto activo, tiene numerosas actualizaciones, cuenta con mucha comunidad para resolver dudas y fomentar su desarrollo, y tiene numerosas facilidades, como un SDK \cite{nvidiadeveloper} y varias herramientas para sus desarrolladores. Por todo esto se escoge CUDA para desarrollar el trabajo.
 
 \bigskip
 CUDA surgió en 2006, cuando NVIDIA lanzó por primera vez al mercado una GPU capaz de renderizar gráficos en 3D y que incluyó la posibilidad de ejecutar, usando CUDA, programas escritos en lenguaje C.
@@ -84,7 +84,7 @@ CUDA surgió en 2006, cuando NVIDIA lanzó por primera vez al mercado una GPU ca
 
 Gracias a su eficiencia energética y gran potencia, desde entonces NVIDIA ofrece la capacidad de sus tarjetas gráficas para grandes centros de datos y otras instituciones tanto científicas como gubernamentales, permitiendo dibujar gráficos y ejecutar diversos programas aprovechando.
 
-Incluso se utilizan versiones reducidas para potenciar las aplicaciones tanto de teléfonos móviles, ordenadores portátiles y tablets entre
+Incluso se utilizan versiones reducidas para potenciar las aplicaciones tanto de teléfonos móviles, ordenadores portátiles y tablets, entre
 otros.
 
 
@@ -92,11 +92,11 @@ otros.
 En este campo hay algunos proveedores, como Impact  \cite{cudaimpact} o gpuOcelot \cite{cudagpuocelot} que ofrecen herramientas para la computación de algoritmos estándar o del código que genere el usuario, pero  realizando el cómputo desde las GPUs de los clientes, y nunca enfocados específicamente a resolver algoritmos genéticos.
 
 \bigskip
-Otras opciones nos permiten ejecutar CUDA en servidores externos, pero se necesita enviar una solicitud de uso y adaptarse a sus restricciones y capacidad, como en rCUDA \cite{rcuda}
+Otras opciones permiten ejecutar CUDA en servidores externos, pero se necesita enviar una solicitud de uso y adaptarse a sus restricciones y capacidad, como en rCUDA \cite{rcuda}
 o desplegar toda una instancia en un IaaS y desarrollar dentro: Amazon Web Services \cite{amazoncuda}.
 
 \bigskip
-Con esto vemos que podemos encontrar servicios que realicen algoritmos genéticos, o servicios que usen CUDA, pero no hay servicios que combinen ambos.
+Con esto se puede ver que podemos encontrar servicios que realicen algoritmos genéticos, o servicios que usen CUDA, pero no hay servicios que combinen ambos.
 
 
 \bigskip
@@ -116,16 +116,16 @@ Además el servicio será accesible a cualquier usuario, y con su interfaz senci
 
 Como se cita antes, existen ejemplos o plantillas de algoritmos genéticos \cite{agpython} \cite{agjava} \cite{agmatlab} que los usuarios pueden usar, pero necesitan para su uso un trabajo extra para su instalación, desarrollo o ajustes. Además de este trabajo extra, se ven limitados por las capacidades de sus dispositivos, pues los algoritmos se tendrán que lanzar en local.
 
-Para evitar dichas limitaciones, podemos usar la paralelización de los algoritmos, pero los trabajos que encontramos se encuentran en una versión de CUDA obsoleta \cite{paralelizacioncuda} (y simplemente exponiendo el código) o son estudios del servicio sin llegar a ser implementado \cite{optimizacionparalelizacioncuda}. Se busca entonces un servicio que ofrezca computación desde un servidor externo. Podemos ver servicios que computan directamente CUDA \cite{rcuda} u ofrecen instancias con acceso a GPUs \cite{amazoncuda}  pero nunca especializados en algoritmos genéticos.
+Para evitar dichas limitaciones, podemos usar la paralelización de los algoritmos, pero los trabajos que encontramos se encuentran en una versión de CUDA obsoleta \cite{paralelizacioncuda} (y simplemente exponiendo el código) o son estudios del servicio sin llegar a ser implementado \cite{optimizacionparalelizacioncuda}. Se busca entonces un servicio que ofrezca computación desde un servidor externo. Se pueden ver servicios que computan directamente CUDA \cite{rcuda} u ofrecen instancias con acceso a GPUs \cite{amazoncuda}  pero nunca especializados en algoritmos genéticos.
 
 
 \bigskip
 \section{Conclusiones}
 \bigskip
 
-Si buscamos un servicio de computación externo (que ofrezca una mayor potencia de computación usando GPUs) de algoritmos genéticos no llegamos a encontrar nada que cumpla con nuestro requisitos: o son servicios en local para lanzar algoritmos genéticos o son servicios externos que nos ofrecen computación aprovechando la paralelización de CUDA, pero sin llegar a ofrecer ninguna aproximación de un algoritmo genético.
+Si se busca un servicio de computación externo (que ofrezca una mayor potencia de computación usando GPUs) de algoritmos genéticos no llegamos a encontrar nada que cumpla con nuestro requisitos: o son servicios en local para lanzar algoritmos genéticos o son servicios externos que nos ofrecen computación aprovechando la paralelización de CUDA, pero sin llegar a ofrecer ninguna aproximación de un algoritmo genético.
 
-Viendo esto llegamos a una demanda que podemos cubrir con nuestro servicio, motivando a su desarrollo, implementación y creación.
+Viendo esto se encuentra una demanda que podemos cubrir con nuestro servicio, motivando a su desarrollo, implementación y creación.
 
 
 
