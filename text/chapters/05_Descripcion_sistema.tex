@@ -1,29 +1,282 @@
-\chapter{Especificación de requisitos}
+\chapter{Descripción del sistema}
 
 \bigskip
-Detallaremos las restricciones que se han tenido al empezar el desarrollo, los requisitos funcionales identificados, y los casos de uso.
+En este capítulo se describe la fase de análisis del proyecto. Algunos requisitos o partes del capítulo fueron modificados o corregidos durante el trabajo. A continuación se muestran los definitivos.
 
-\newpage
-\section{Análisis del sistema}
+\bigskip
+\section{Análisis inicial}
+
+Este proyecto fue propuesto desde un principio por {\tutor}, ya que en su ámbito de investigación requiere algoritmos evolutivos con muchos requerimientos de cómputo, por lo que al  pararelizarlos se logran unos resultados más rápidos, y al estar disponible en un servicio web no es necesario un dispositivo específico.
+
+Después de la propuesta del trabajo, y antes del desarrollo del mismo se hicieron diversas reuniones para establecer sus bases y alcance. 
+
+En la selección de tecnologías a usar se optó por la arquitectura de cómputo CUDA, ya que es actualmente la más potente, como se ve en el capítulo anterior, y se dispone de una tarjeta gráfica NVIDIA de gran potencia.
+
+En la parte del servicio web se optó por el framework python Django, ya que se estudió con profundidad a lo largo del curso y es en la actualidad es la mejor opción para realizar un servicio web.
+
+Dichas tecnologías son actuales, con una gran comunidad detrás, de manera que están en continuo desarrollo y mejora, además de estar bien asentadas, dando robustez al trabajo.
+
 
 \newpage
 \section{Objetivos}
 
+Este trabajo tiene como principal objetivo el desarrollo de unas clases que lancen algoritmos genéticos de forma paralela, y puedan ser usados por un servicio web.
+
+Los principales objetivos, de manera reducida, que se quieren alcanzar con este trabajo son:
+
+
+\begin{itemize}
+	\item  \textbf{OBJ. 1} Gestión del servicio web
+	\begin{itemize}
+		\item \textbf{OBJ. 1.1} Interfaz sencilla y adaptativa
+		\item \textbf{OBJ. 1.2} Recogida de parámetros
+		\item \textbf{OBJ. 1.3} Petición al servidor
+		\item \textbf{OBJ. 1.4} Recogida y muestra de la solución
+	\end{itemize}
+		
+	\item  \textbf{OBJ. 2} Gestión del algoritmo genético
+	\begin{itemize}
+		\item \textbf{OBJ. 2.1} Recogida de parámetros
+		\item \textbf{OBJ. 2.2} Ejecución del algoritmo
+		\item \textbf{OBJ. 2.3} Salida formateada
+	\end{itemize}
+	
+\end{itemize}
+
+
+	 
+
 \newpage
 \section{Resumen de implicados}
+
+\bigskip
+\textbf{Usuario}\\
+
+Descripción: Representa al usuario que quiere hacer uso del sistema.\\
+
+Tipo: Usuario del sistema\\
+
+Responsabilidad: Completar el formulario con los datos que requiera el algoritmo genético.
+
+\bigskip
+\textbf{Administrador del sistema}\\
+
+Descripción: Representa a la persona encargada de mantener, actualizar y gestionar el sistema.\\
+
+Tipo: Superusuario\\
+
+Responsabilidad: Realizar todas las actividades de gestión y actualización del sistema.
+
+
 
 \newpage
 \section{Especificación de requisitos}
 
-
 \subsection{Requisitos funcionales}
+
+\bigskip
+En esta sección del capítulo se definirá y describiran las características de alto nivel (requisitos funcionales) del sistema que son necesarios para las necesidades del usuario.
+
+\bigskip
+RF 1 Gestión del servicio web
+
+\begin{itemize}
+	\item RF 1.1 Despliegue de la web con sus elementos y formularios bien situados.
+	
+	\item RF 1.2 Recogida de parámetros mediante el formulario de la función que ha escogido el usuario.
+	
+	\item RF 1.3 Petición para ejecutar el algoritmo 
+	
+	\item RF 1.4 Recogida y maquetado de la respuesta del algoritmo en la web
+\end{itemize}
+
+RF 2 Gestión del algoritmo genético
+
+\begin{itemize}
+	\item RF 2.1 Recogida de parámetros
+	
+	\item RF 2.2.1 Ejecución del algoritmo genético evaluado con Ackley
+	
+	\item RF 2.2.1 Ejecución del algoritmo genético evaluado con Rastrigin
+	
+	\item RF 2.3 Salida formateada
+\end{itemize}
+
+
+
+
+
 
 \subsection{Requisitos no funcionales}
 
+\bigskip
+En esta sección se establecen los requisitos no funcionales.
+
+\bigskip
+\textbf{Rendimiento}\\
+
+RNF 1: Será implementado con tecnologías que optimicen el rendimiento y la eficacia, tanto en el servicio web como en el algoritmo genético.\\
+
+\textbf{Disponibilidad}\\
+
+RNF 2: Se intentará que el servicio esté disponible las 24 horas del día, con una estructura segura y preparada ante los fallos.\\
+
+
+\textbf{Accesibilidad}\\
+
+RNF 3: Se logrará una gran accesibilidad al tratarse de un servicio web.\\
+
+
+\textbf{Usabilidad}\\
+
+RNF 4: La interfaz, con el orden y disposición de los elementos será lo más usable posible.\\
+
+\textbf{Interfaz}\\
+
+RNF 5: La interfaz será sencilla e intuitiva\\
+
+RNF 6: Se adaptará a cualquier tamaño de pantalla, tendrá un diseño adaptativo.\\
+
+
+\textbf{Estabilidad}\\
+
+RNF 7: Se buscará la mayor estabilidad en el sistema, usando tecnologías robustas y estables.\\
+
+
+\textbf{Mantenimiento}\\
+
+RNF 8: Se ha desarrollado de manera ordenada y documentando todos las partes, para que el mantenimiento pueda ser realizado por el mismo desarrollador o por terceros de manera sencilla.\\
+
+
+\textbf{Soporte}\\
+
+RNF 9: Se le facilitará al usuario contacto con alguien responsable del sistema, para que en caso de necesitar soporto le sea fácil y rápido.\\
+
+
+
 \subsection{Requisitos de información}
+
+\bigskip
+En esta sección se establecen los requisitos de información, que estarán fuertemente relacionados a los requisitos funcionales, ya que será la información mínima para llevarlos a cabo.
+
+\bigskip
+RI 1 Gestión del servicio web
+
+\begin{itemize}
+	\item RI 1.1 Recogida de parámetros para el algoritmo genético
+
+	\begin{itemize}
+		\item Tamaño de la población
+		\item Número de cromosomas
+		\item Valor mínimo
+		\item Valor máximo
+		\item Probabilidad de cruce
+		\item Probabilidad de mutación
+		\item Número de generaciones
+			\begin{itemize}
+				\item RI 1.1.1 Recogida de parámetros para la función Ackley
+				\begin{itemize}
+					\item Valor A
+					\item Valor B
+					\item Valor C
+				\end{itemize}
+				
+				\item RI 1.1.2 Recogida de parámetros para la función Rastrigin
+				\begin{itemize}
+					\item Valor A
+				\end{itemize}
+			\end{itemize}
+	\end{itemize}
+
+	\item RI 1.2. Recogida y maquetado de la salida del algoritmo genético
+	\begin{itemize}
+		\item Rendimiento
+		\item Tiempo de cómputo
+		\item Tamaño del cómputo
+		\item Hebras usadas
+		\item Datos de entrada (RI 1.1)
+		\item Información del dispositivo que ha realizado el algoritmo
+		\item Mejores variables obtenidas
+		\item Mejor fitness
+	\end{itemize}
+	
+\end{itemize}
+
+
+
+RI 2 Gestión del algoritmo genético
+
+\begin{itemize}
+	\item RI 2.1 Recogida de parámetros 
+	
+	\begin{itemize}
+		\item Dispositivo a usar
+		\item Función de optimización a usar
+		\item Tamaño de la población
+		\item Número de cromosomas
+		\item Valor mínimo
+		\item Valor máximo
+		\item Probabilidad de cruce
+		\item Probabilidad de mutación
+		\item Número de generaciones
+		\begin{itemize}
+			\item RI 2.1.1 Recogida de parámetros para la función Ackley
+			\begin{itemize}
+				\item Valor A
+				\item Valor B
+				\item Valor C
+			\end{itemize}
+			
+			\item RI 2.1.2 Recogida de parámetros para la función Rastrigin
+			\begin{itemize}
+				\item Valor A
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+	
+	
+	\item RI 2.2. Salida formateada en JSON de la solución obtenida
+	\begin{itemize}
+		\item Rendimiento
+		\item Tiempo de cómputo
+		\item Tamaño del cómputo
+		\item Hebras usadas
+		\item Datos de entrada (RI 2.1)
+		\item Información del dispositivo que ha realizado el algoritmo
+		\item Mejores variables obtenidas
+		\item Mejor fitness
+	\end{itemize}
+	
+\end{itemize}
+
 
 \subsection{Restricciones}
 
+\bigskip
+Las restricciones del sistema serán las siguientes:
+
+\bigskip
+RI 1.1 Recogida de parámetros para el algoritmo genético:
+
+\begin{itemize}
+	\item RSTR 1.1: El tamaño de la población será menor de 10.000.
+	\item RSTR 1.2: Habrá un máximo de 1.000 cromosomas (1000 variables).
+	\item RSTR 1.3: El valor máximo tendrá que ser más grande el el valor mínimo.
+	\item RSTR 1.4: La probabilidad de cruce tendrá que ser entre 0 y 1.
+	\item RSTR 1.5: La probabilidad de mutación tendrá que ser entre 0 y 1.
+\end{itemize}
+
+
+\bigskip
+RI 2.1 Recogida de parámetros (del algoritmo genético)
+\begin{itemize}
+	\item RSTR 2.1: Para escoger la función con la que optmizar introducimos 0 o 1.
+	\item RSTR 2.2: El tamaño de la población será menor de 10.000.
+	\item RSTR 2.3: Habrá un máximo de 1.000 cromosomas (1000 variables).
+	\item RSTR 2.4: El valor máximo tendrá que ser más grande el el valor mínimo.
+	\item RSTR 2.5: La probabilidad de cruce tendrá que ser entre 0 y 1.
+	\item RSTR 2.6: La probabilidad de mutación tendrá que ser entre 0 y 1.
+\end{itemize}
 
 \newpage
 \section{Diagramas del sistema}
