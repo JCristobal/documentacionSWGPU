@@ -78,7 +78,7 @@ Responsabilidad: Realizar todas las actividades de gestión y actualización del
 En esta sección del capítulo se definirá y describiran las características de alto nivel (requisitos funcionales) del sistema que son necesarios para las necesidades del usuario.
 
 \bigskip
-RF 1 Gestión del servicio web
+\textbf{RF 1 Gestión del servicio web}
 
 \begin{itemize}
 	\item RF 1.1 Despliegue de la web con sus elementos y formularios bien situados.
@@ -90,7 +90,7 @@ RF 1 Gestión del servicio web
 	\item RF 1.4 Recogida y maquetado de la respuesta del algoritmo en la web
 \end{itemize}
 
-RF 2 Gestión del algoritmo genético
+\textbf{RF 2 Gestión del algoritmo genético}
 
 \begin{itemize}
 	\item RF 2.1 Recogida de parámetros
@@ -115,42 +115,42 @@ En esta sección se establecen los requisitos no funcionales.
 \bigskip
 \textbf{Rendimiento}\\
 
-RNF 1: Será implementado con tecnologías que optimicen el rendimiento y la eficacia, tanto en el servicio web como en el algoritmo genético.\\
+\textbf{RNF 1}: Será implementado con tecnologías que optimicen el rendimiento y la eficacia, tanto en el servicio web como en el algoritmo genético.\\
 
 \textbf{Disponibilidad}\\
 
-RNF 2: Se intentará que el servicio esté disponible las 24 horas del día, con una estructura segura y preparada ante los fallos.\\
+\textbf{RNF 2}: Se intentará que el servicio esté disponible las 24 horas del día, con una estructura segura y preparada ante los fallos.\\
 
 
 \textbf{Accesibilidad}\\
 
-RNF 3: Se logrará una gran accesibilidad al tratarse de un servicio web.\\
+\textbf{RNF 3}: Se logrará una gran accesibilidad al tratarse de un servicio web.\\
 
 
 \textbf{Usabilidad}\\
 
-RNF 4: La interfaz, con el orden y disposición de los elementos será lo más usable posible.\\
+\textbf{RNF 4}: La interfaz, con el orden y disposición de los elementos será lo más usable posible.\\
 
 \textbf{Interfaz}\\
 
-RNF 5: La interfaz será sencilla e intuitiva\\
+\textbf{RNF 5}: La interfaz será sencilla e intuitiva\\
 
-RNF 6: Se adaptará a cualquier tamaño de pantalla, tendrá un diseño adaptativo.\\
+\textbf{RNF 6}: Se adaptará a cualquier tamaño de pantalla, tendrá un diseño adaptativo.\\
 
 
 \textbf{Estabilidad}\\
 
-RNF 7: Se buscará la mayor estabilidad en el sistema, usando tecnologías robustas y estables.\\
+\textbf{RNF 7}: Se buscará la mayor estabilidad en el sistema, usando tecnologías robustas y estables.\\
 
 
 \textbf{Mantenimiento}\\
 
-RNF 8: Se ha desarrollado de manera ordenada y documentando todos las partes, para que el mantenimiento pueda ser realizado por el mismo desarrollador o por terceros de manera sencilla.\\
+\textbf{RNF 8}: Se ha desarrollado de manera ordenada y documentando todos las partes, para que el mantenimiento pueda ser realizado por el mismo desarrollador o por terceros de manera sencilla.\\
 
 
 \textbf{Soporte}\\
 
-RNF 9: Se le facilitará al usuario contacto con alguien responsable del sistema, para que en caso de necesitar soporto le sea fácil y rápido.\\
+\textbf{RNF 9}: Se le facilitará al usuario contacto con alguien responsable del sistema, para que en caso de necesitar soporto le sea fácil y rápido.\\
 
 
 
@@ -160,7 +160,7 @@ RNF 9: Se le facilitará al usuario contacto con alguien responsable del sistema
 En esta sección se establecen los requisitos de información, que estarán fuertemente relacionados a los requisitos funcionales, ya que será la información mínima para llevarlos a cabo.
 
 \bigskip
-RI 1 Gestión del servicio web
+\textbf{RI 1 Gestión del servicio web}
 
 \begin{itemize}
 	\item RI 1.1 Recogida de parámetros para el algoritmo genético
@@ -204,7 +204,7 @@ RI 1 Gestión del servicio web
 
 
 
-RI 2 Gestión del algoritmo genético
+\textbf{RI 2 Gestión del algoritmo genético}
 
 \begin{itemize}
 	\item RI 2.1 Recogida de parámetros 
@@ -269,6 +269,7 @@ RI 1.1 Recogida de parámetros para el algoritmo genético:
 
 \bigskip
 RI 2.1 Recogida de parámetros (del algoritmo genético)
+
 \begin{itemize}
 	\item RSTR 2.1: Para escoger la función con la que optmizar introducimos 0 o 1.
 	\item RSTR 2.2: El tamaño de la población será menor de 10.000.
@@ -278,15 +279,98 @@ RI 2.1 Recogida de parámetros (del algoritmo genético)
 	\item RSTR 2.6: La probabilidad de mutación tendrá que ser entre 0 y 1.
 \end{itemize}
 
+
 \newpage
 \section{Diagramas del sistema}
 
+\bigskip
 \subsection{Diagramas de clases}
+\bigskip
 
+Aquí se verá en forma de diagramas de clases los elementos que conforman la estructura principal del sistema y como se relacionan entre ellos.
+
+Los elementos del siguiente diagrama son:
+
+\begin{itemize}
+	\item Usuario
+	\item Sistema
+	\item Petición
+	\item Salida del algoritmo
+\end{itemize}
+
+
+\bigskip
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.95\linewidth]{../images/diagrama_clases}
+	\caption[Diagrama de clases del sistema]{Diagrama de clases del sistema}
+	\label{fig:diagrama_clases}
+\end{figure}
+
+\bigskip
+Los elementos citados tienen las relaciones:
+
+\begin{itemize}
+	\item Un \textit{Usuario} puede realizar 1 o varias \textit{Peticiones}.
+	\item Una \textit{Petición} pertenece a un \textit{Usuario}.
+	\item El \textit{Sistema} puede recibir 1 o varias \textit{Peticiones}.
+	\item Una \textit{Petición} puede ser hecha al \textit{Sistema} (sólo uno).
+	\item El \textit{Sistema} puede generar 1 o varias \textit{Salidas del algoritmo}.
+	\item Cada \textit{Salida del algoritmo} se genera en (sólo un) \textit{Sistema}.
+	\item Cada \textit{Petición} tiene una sola \textit{Salida del algoritmo}.
+	\item Cada \textit{Salida del algoritmo} pertenece a una \textit{Petición}. 
+	\item Cada \textit{Salida del algoritmo} tiene asociado a un \textit{Usuario}.
+	\item Un \textit{Usuario} puede obtener 1 o varias \textit{Salidas del algoritmo}.
+\end{itemize}
+
+
+\bigskip
 \subsection{Diagramas de caso de uso}
+\bigskip
+
+\bigskip
+\textbf{Gestión del Servicio web}
+
+\bigskip
+En esta sección se verán las tareas que influyen en el servicio web. Este sistema hará posible que el usuario pueda realizar una petición de algoritmo genético con los parámetros que quiera.
+
+
+\bigskip
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\linewidth]{../images/d_CU1}
+	\caption[Diagrama de caso de uso en Gestión del Servicio web]{Diagrama de caso de uso en Gestión del Servicio web}
+	\label{fig:d_CU1}
+\end{figure}
 
 
 
+\bigskip
+\textbf{Gestión del algoritmo genético}
+
+\bigskip
+En esta sección se verán las tareas que influyen en el algoritmo genético. El sistema hará uso del algoritmo genético implementado para aprovechar la GPU, con los parámetros que se le pasen y generará una salida en formato JSON para poder trabajar con ella fácilmente.
+
+\bigskip
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\linewidth]{../images/d_CU2}
+	\caption[Diagrama de caso de uso en Gestión del algoritmo]{Diagrama de caso de uso en Gestión del algoritmo}
+	\label{fig:d_CU2}
+\end{figure}
 
 
+\bigskip
+\subsection{Flujo de la interfaz}
+\bigskip
+
+En esta sección se verá la navegación que se puede hacer a través de la web. Será una única pantalla, pero las distintas opciones se mostrarán en varias \textit{escenas} o \textit{pantallas}, para hacer un avance fluido y sin necesidad de retroceder o avanzar perdiendo información entre distintas pantallas.
+
+\bigskip
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{../images/flujo_interfaz}
+	\caption[Flujo de la interfaz web]{Flujo de la interfaz web}
+	\label{fig:flujo_interfaz}
+\end{figure}
 
