@@ -168,7 +168,7 @@ Se hará uso de Django para crearlo y gestionarlo. A continuación se citan sus 
 \end{itemize}
 
 \bigskip
-\subsection{Ejecutables a usar por el BackEnd}
+\subsection{Ejecutable a usar por el BackEnd}
 \bigskip
 
 El sistema hará uso de la GPU del servidor (BackEnd) mediante el ejecutable \textit{geneticAlgorithm} (ubicado en el directorio \textit{bin}), escrito en C++ y CUDA. De esta manera se facilitará el servicio, ya que al tratarse de un ejecutable al que sólo hay que realizar una petición con los parámetros deseados se cubren los posibles fallos y la salida que dará. 
@@ -184,7 +184,7 @@ En las siguiente imagen se ve una captura de petición de ayuda sobre las variab
 \end{figure}
 
 \bigskip
-ejecutaría el algoritmo genético con los parámetros especificados además de los declarados por defecto:
+Y otra captura con una petición que ejecutaría el algoritmo genético con los parámetros especificados además de los declarados por defecto:
 
 \bigskip
 \begin{figure}[h]
@@ -209,8 +209,8 @@ y a continuación se ve la salida completa en formato JSON:
 			"b": "0.200000",
 			"c": "6.283185",
 			"n_generations": "200",
-			"minimal_value": "-30.000000",
-			"maximum_value": "30.000000",
+			"minimal_value": "-30.0000",
+			"maximum_value": "30.0000",
 			"p_mutation": "0.150000",
 			"p_crossover": "0.800000",
 			"population_size": "50",
