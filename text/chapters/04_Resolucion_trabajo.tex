@@ -36,9 +36,6 @@ A continuación se muestra mediante un diagrama de Gantt la planificación estim
 Y en la siguiente figura se ve el desarrollo que se a producido, tras desviaciones imprevistas o ajustes de tiempo durante el mismo proceso:
 
 
-(aproximación del diagrama de Gantt, pendiente la definitiva:)
-
-
 \bigskip
 \begin{figure}[h]
 	\centering
@@ -49,10 +46,9 @@ Y en la siguiente figura se ve el desarrollo que se a producido, tras desviacion
 
 
 \bigskip
-\subsection{Conteo de horas y presupuesto}
+\subsection{Conteo de horas}
 \bigskip
 
-\textbf{Conteo de horas}
 
 \begin{itemize}
 	
@@ -60,7 +56,7 @@ Y en la siguiente figura se ve el desarrollo que se a producido, tras desviacion
 		\begin{itemize}
 			\item Preparación: 
 	
-			8.75 semanas, a 3 días/semana, a 2 horas/día: 52.5 horas	
+			8,75 semanas, a 3 días/semana, a 2 horas/día: 52,5 horas	
 			
 			\item Desarrollo de algoritmo genético: 
 			
@@ -68,14 +64,14 @@ Y en la siguiente figura se ve el desarrollo que se a producido, tras desviacion
 
 			\item Desarrollo de servicio web: 
 			
-			7 semana, a 5 días/semana, a 2 horas/día: 70 horas
+			7 semanas, a 5 días/semana, a 2 horas/día: 70 horas
 			
 			\item Documentación: 
 			
-			8.29 semanas, a 4 días/semana, a 2 horas/día: 66.3 horas
+			8,29 semanas, a 4 días/semana, a 2 horas/día: 66,3 horas
 			
 			\bigskip			
-			\textbf{Con lo que se sumaría un total de 380.8 horas.}
+			\textbf{Con lo que se sumaría un total de 380,8 horas.}
 			
 		\end{itemize}
 	
@@ -83,31 +79,33 @@ Y en la siguiente figura se ve el desarrollo que se a producido, tras desviacion
 		\begin{itemize}
 			\item Preparación: 
 			
-			8.76 semanas, a  3 días/semana, a  2 horas/día:  52.5 horas
+			8,76 semanas, a  3 días/semana, a  2 horas/día:  52,56 horas
 			
 			\item Desarrollo de algoritmo genético: 
 			
-			9.15 semanas, a 4 días/semana, a 4 horas/día: 146.4 horas
+			11,72 semanas, a 4 días/semana, a 4 horas/día: 187,52 horas
 			
 			\item Desarrollo de servicio web: 
 			
-			?? semanas, a 5 días/semana, a 2 horas/día:  ?? horas
+			5,43 semanas, a 5 días/semana, a 2 horas/día:  54,2 horas
 			
 			\item Documentación: 
 			
-			?? semanas, a 4 días/semana, a 2 horas/día: ?? horas
+			7,72 semanas, a 4 días/semana, a 2 horas/día: 61,76 horas
 			
 			\bigskip			
-			\textbf{Sumando finalmente un total de ?? horas.}
+			\textbf{Sumando finalmente un total de 356,04 horas.}
 
 		\end{itemize}
 		
 \end{itemize}
 
 \bigskip
-\textbf{Presupuesto}
+\subsection{Presupuesto}
+\bigskip
 
-En este punto veremos los presupuesto según el conteo de horas para cada una de las 2 estimaciones y los servicios que requiramos. Suponiendo la media actual de un programador Junior \cite{sueldos}: 9\officialeuro/hora
+
+En este punto veremos los presupuesto según el conteo de horas para cada una de las 2 estimaciones y los servicios que requiramos (obviando el alquiler y mantenimiento del lugar de trabajo). Suponiendo la media actual de un programador Junior (Abril 2016) \cite{sueldos}: 11,25\officialeuro/hora
 
 
 \bigskip
@@ -117,30 +115,32 @@ En este punto veremos los presupuesto según el conteo de horas para cada una de
 	\begin{itemize}
 		\item Preparación: 
 		
-		52.5 horas x 9\officialeuro/hora : 472,5\officialeuro
+		52,5 horas x 11,25\officialeuro/hora : 590.62\officialeuro
 		
 		\item Desarrollo de algoritmo genético: 
 		
-		192 horas x 9\officialeuro/hora: 1728\officialeuro
+		192 horas x 11,25\officialeuro/hora: 2137.50\officialeuro
 		
 		\item Desarrollo de servicio web
 		
-		70 horas x 9\officialeuro/hora: 630\officialeuro
+		70 horas x 11,25\officialeuro/hora: 787.50\officialeuro
 		
 		\item Documentación: 
 
-		66.3 horas x 9\officialeuro/hora: 596,7\officialeuro
+		66,3 horas x 11,25\officialeuro/hora: 745.86\officialeuro
+		
+		\item Ordenador con el que trabajar: se optará por el modelo Acer Aspire V3 \cite{aceraspire}, que cuenta con una tarjeta gráfica GeForce 840M \cite{geforce840m} y que permitirá desarrollar y ejecutar algoritmos mediante CUDA 7.5.:  716\officialeuro
 		
 		\item \textit{Instancia que permita usar CUDA}
 		
-		Se contratarán servicios externos de cómputo mediante CUDA \cite{amazoncuda} con un coste de 1.88\officialeuro/h (2.10\textdollar/h). Suponiendo que este servicio estuviese en total disponibilidad (24 horas los 7 días de la semana) alcanzaría en sólo un mes de servicio los 315,84\officialeuro.
+		Se contratarán servicios externos de cómputo mediante CUDA \cite{amazoncuda} con un coste de 1,88\officialeuro/h (2,10\textdollar/h). Suponiendo que este servicio estuviese en total disponibilidad (24 horas los 7 días de la semana) alcanzaría en sólo un mes de servicio los 315,84\officialeuro.
 		
 		\item \textit{Dominio para alojar una web publica del servicio}
 		
-		En caso de que no fuese posible, se contrataría un dominio por precios de 2.08\officialeuro a 4.95\officialeuro al mes (con permanencia de 12 meses, en las webs de alojamiento \textit{Hostpapa.es} \cite{hostpapa} y \textit{Dondominio.com} \cite{dondominio})
+		En caso de que no fuese posible, se contrataría un dominio por precios de 2,08\officialeuro a 4,95\officialeuro al mes (con permanencia de 12 meses, en las webs de alojamiento \textit{Hostpapa.es} \cite{hostpapa} y \textit{Dondominio.com} \cite{dondominio}): 2,08\officialeuro
 		
 		\bigskip
-		\textbf{Presupuesto total estimado: 3745,12\officialeuro (para el desarrollo y sólo un mes en producción) }
+		\textbf{Presupuesto total estimado: 5.295,40\officialeuro (para el desarrollo y sólo un mes en producción) }
 		
 	\end{itemize}
 	
@@ -148,20 +148,22 @@ En este punto veremos los presupuesto según el conteo de horas para cada una de
 	\begin{itemize}
 		\item Preparación
 		
-		52.5 horas 9\officialeuro/hora
+		52,5 horas x 11,25\officialeuro/hora: 590,62\officialeuro
 		
 		\item Desarrollo de algoritmo genético
 		
-		146.4 horas 9\officialeuro/hora
+		187,52 horas x 11,25\officialeuro/hora: 2.109,6\officialeuro
 		
 		\item Desarrollo de servicio web
 		
-		?? x 9\officialeuro/hora
+		54,2 x 11,25\officialeuro/hora: 609,75\officialeuro
 		
 		\item Documentación
 
-		?? x 9\officialeuro/hora
+		61,76 x 11,25\officialeuro/hora: 694,8\officialeuro
 		
+		\item Ordenador Acer Aspire V3:  716\officialeuro
+				
 		\item \textit{Instancia que permita usar CUDA}
 		
 		En esta parte se aprovechará el servidor que ofrece la tutora del trabajo {\tutor}, con gran capacidad de cómputo y de manera gratuita. Esto ayudará de manera muy importante al trabajo, ya que reducirá de manera muy importante el presupuesto final del proyecto.
@@ -171,13 +173,13 @@ En este punto veremos los presupuesto según el conteo de horas para cada una de
 		Al igual que en el punto anterior, se aprovechará el servicio de la tutora para lanzar el servicio web, reduciendo también el presupuesto final.
 		
 		\bigskip
-		\textbf{Presupuesto total real: ? \officialeuro}
+		\textbf{Presupuesto total real: 4.720,77 \officialeuro}
 		
 	\end{itemize}
 
 \end{itemize}
 
-
+Al final se reduce algo el presupuesto respecto al estimado (de 5.295\officialeuro a 4.720\officialeuro), se producen varios cambios en la planificación y sobre todo se aprovecha el servidor ofrecido por la tutora.
 
 \newpage
 \section{Tecnologías}
