@@ -1,7 +1,7 @@
 \chapter{Desarrollo del sistema}
 
 \bigskip
-En este capítulo veremos la arquitectura del sistema, la \textit{filosofía} o principios seguidos y algunos detalles de la implementación.
+En este capítulo veremos la arquitectura del sistema, la \textit{filosofía} o principios seguidos y algunas partes del sistema.
 
 
 \bigskip
@@ -252,6 +252,53 @@ Pese a todas esas desventajas, con un buen uso del cliente y una correcta preven
 
 \newpage
 \section{Pruebas}
+\bigskip
+
+A continuación se probará el rendimiento en 2 dispositivos distintos con sus respectivas especificaciones para realizar el cómputo. Con esto se verá que el sistema no depende de un modelo específico de tarjeta y presenta buenos resultados para varios modelos.
+
+Se probará para una tarjeta GeForce 840M \cite{geforce840m} y GeForce GXT 660 Ti \cite{geforcegtx660}. Primero se verá una comparativa entre ambas, para luego ver los resultados obtenidos al realizar los mismo cómputos.
+
+\bigskip
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{../images/especificaciones}
+	\caption[Especificaciones de las tarjetas 840M y GTX660]{Especificaciones de las tarjetas 840M y GTX660}
+	\label{fig:especificaciones}
+\end{figure}
+
+\bigskip
+Como nota hay que destacar el parámetro de \textit{capability} (capacidad), que será el que mayores restricciones o mejoras imponga en sus distintas versiones. Cuanto mayor sea esta, más funcionalidades podrá realizar y soportará más requisitos técnicos.
+
+\bigskip
+En la siguiente gráfica (Figura \ref{fig:grafico_benchmarks}) se verá la diferencia de ambas en benchmarks para medir procesamiento de gráficos (Parallax, MRender, Gravity y Splatting):
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\linewidth]{../images/grafico_benchmarks}
+	\caption[Comparativa de las tarjetas mediante bencharks de GPU]{Comparativa de las tarjetas mediante bencharks de GPU}
+	\label{fig:grafico_benchmarks}
+\end{figure}
 
 
+\newpage %\bigskip
+Pero en el ámbito de la computación mediante GPU con CUDA tendremos hay que fijarse en la capacidad de cada modelo de tarjeta, ya que una versión más actualizada puede lograr mejores resultados aunque tenga peores especificaciones \cite{capacidadescuda}.
+
+\bigskip
+Para ello se verán los tiempos que emplean ambas tarjetas (con distintas capacidades \cite{capacidades}) para varios números de generaciones:
+
+\bigskip
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\linewidth]{../images/grafico_tiempos}
+	\caption[Comparativa de tiempos entre tarjetas]{Comparativa de tiempos entre tarjetas}
+	\label{fig:grafico_tiempos}
+\end{figure}
+
+\bigskip
+Y se ve que la tarjeta con mejores prestaciones pero peor capacidad (GeForce GTX 660 Ti) tarda más en ejecutar los mismos procesamientos que hace la tarjeta con peores prestaciones pero mejor capacidad (GeForce 840M).
+
+\bigskip
+Como conclusión se llega a que a la hora de escoger el dispositivo a usar por el sistema para realizar los cómputos no sólo habrá que tener en cuenta los requisitos, si no que el factor de capacidad será decisivo para el rendimiento del cómputo y con ello del sistema.
+
+También que ambas producen buenos resultados en el sistema, por lo que, por ejemplo se podría usar cualquiera de las 2 en el sistema.
 
