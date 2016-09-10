@@ -1,15 +1,39 @@
 \chapter{Conclusiones y trabajos futuros}
 
+
 \bigskip
-..
-
-\newpage
 \section{Conclusiones}
+\bigskip
 
+Una vez realizado el trabajo, se verán los objetivos (citados en el capítulo 2) y su respectivo avance.
 
+\bigskip
+Respecto a las clases para lanzar un algoritmo genético se han logrado cumplir, reuniéndolas en el archivo ejecutable \textit{geneticAlgorithm}. Se ha desarrollado como un módulo independiente, para poder ser usado por cualquier servicio, y no ser dependiente del servicio web, controlando la entrada de parámetros y control de fallos.
 
+\bigskip
+También se ha creado la estructura del servicio web, de manera que sea accesible desde cualquier servidor web.
+Dicho servicio facilita la petición del algoritmo genético, y se obtendrán los resultados mediante el uso de la GPU del servidor.
+
+\bigskip
+Se a publicado el servicio, en forma de \textit{beta}. Se encuentra accesible en  \href{www.genmagic.ugr.es:8000}{www.genmagic.ugr.es:8000}, accesible dentro de la red de la UGR \cite{vpnugr}.
+	
 
 \section{Trabajos futuros}
+
+\bigskip
+Además de mantener y gestionar la versión actual del servicio web, se podría trabajar en la mejora de la experiencia de usuario.
+
+\bigskip
+También se refinará el algoritmo, logrando un mejor aprovechamiento de los recursos y mejorando los resultados.
+
+\bigskip
+Como se comenta en el capítulo 6 (en la subsección \textit{Ejecutable a usar por el BackEnd}) se estudiará la posibilidad de que el usuario pudiera añadir funcionalidades o cualquier procesamiento usando la GPU mediante CUDA. 
+
+\bigskip
+De esta manera se podría ejecutar cualquier opción de optimización, o fuera del ámbito de los algoritmos genéticos cualquier funcionalidad que requiera el usuario.
+
+\bigskip
+Esto requeriría un conocimiento mayor por parte del usuario. Además supondría un mayor consumo de recursos, pero con un buen uso del usuario y una correcta prevención de fallos se conseguiría una funcionalidad mayor y llena de posibilidades. 
 
 
 
