@@ -15,7 +15,7 @@ El cliente o usuario tendrá una primera impresión de la \textit{portada} del s
 \end{figure}
 
 
-Una vez avance podrá ver los servicios disponibles: ejecutar un algoritmo genético y que se optimizado mediante la función de Ackley o de Rastrigin. Para acceder a dichos servicios sólo tendrá que \textit{clickar} sobre el servicio que quiera y se desplegará.
+Una vez avance podrá ver los servicios disponibles: ejecutar un algoritmo genético y que use la funcion de evaluacion de Ackley o de Rastrigin. Para acceder a dichos servicios sólo tendrá que \textit{clickar} sobre el servicio que quiera y se desplegará.
 
 \bigskip
 \begin{figure}[h]
@@ -63,7 +63,7 @@ Y una vez realizado el algoritmo genético, ya se podrá acceder a los resultado
 
 \newpage
 \bigskip
-Por último, se muestra al final, aunque se puede acceder siempre a él, una sección de contacto. Se podrá poner en contacto con el administrador del sistema.
+Por último se muestra al final (aunque se puede acceder siempre a él) una sección de contacto. Se podrá poner en contacto con el administrador del sistema.
 
 \bigskip
 \begin{figure}[h]
@@ -110,7 +110,7 @@ Y para el procesamiento mediante CUDA:
 \bigskip
 
 
-Una vez que se cumplen los requisitos, sólo habrá que lanzar el servicio web, ya que el procesamiento usando la GPU se gestiona sólo mediante el ejecutable \textit{geneticAlgorithm}.
+Una vez que se cumplen los requisitos, sólo habrá que lanzar el servicio web, ya que el procesamiento usando la GPU se gestiona mediante el ejecutable \textit{geneticAlgorithm} dirigido por el servicio web.
 
 Para ello el servidor Apache tendrá que estar activo (se puede activar ejecutando \textit{service apache2 restart}) y lanzar el proyecto Django con el proyecto: dentro del directorio SWGPU ejecutar, junto con la URL donde lanzar el sistema \textit{python manage.py runserver [URL]}
 

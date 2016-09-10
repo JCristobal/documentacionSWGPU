@@ -3,6 +3,9 @@
 \bigskip
 En este capítulo veremos la arquitectura del sistema, la \textit{filosofía} o principios seguidos y algunas partes del sistema.
 
+\bigskip
+El código del sistema se encuentra en GitHub. Para el sistema completo, que recoge el servicio web y la gestión de la ejecución del algoritmo genético: \textcolor{blue}{\underline{\href{https://github.com/JCristobal/SWGPU}{SWGPU}}}. Y para el módulo que gestiona el algoritmo genético: \textcolor{blue}{\underline{\href{https://github.com/JCristobal/geneticAlgorithm}{geneticAlgorithm}}}.
+
 
 \bigskip
 \section{Arquitectura del sistema}
@@ -173,6 +176,7 @@ Se hará uso de Django para crearlo y gestionarlo. A continuación se citan sus 
 
 El sistema hará uso de la GPU del servidor (BackEnd) mediante el ejecutable \textit{geneticAlgorithm} (ubicado en el directorio \textit{bin}), escrito en C++ y CUDA. De esta manera se facilitará el servicio, ya que al tratarse de un ejecutable al que sólo hay que realizar una petición con los parámetros deseados se cubren los posibles fallos y la salida que dará. 
 
+\bigskip
 En las siguiente imagen se ve una captura de petición de ayuda sobre las variables a introducir mediante el ejecutable:
 
 \bigskip
@@ -203,7 +207,6 @@ y a continuación se ve la salida completa en formato JSON:
 		"nombre": "Algoritmo genético usando la función de Ackley mediante CUDA",
 		"dispositivo": "GPU Device 0: GeForce 840M ",
 		"capacidad_computo": " 5.0 ",
-		"info_matriz": "Matrix(50,10) with random values",
 		"info_input": {
 			"a": "20.000000",
 			"b": "0.200000",
@@ -244,10 +247,10 @@ y a continuación se ve la salida completa en formato JSON:
 
 
 \bigskip
-Si cada vez que se hiciera una petición, se pudiese cambiar el código fuente, o añadir funcionalidades, habría que compilar el programa, comprobar que no hubiese fallos ni generase errores, y no se garantizaría una salida formateada correctamente, además de generar una petición que consume más recursos y tiempo.
+Se optó por un ejecutable porque si cada vez que se realizara una petición hubiese que compilar el programa con el algoritmo genético, comprobar que no hubiese fallos ni generase errores, y no se garantizaría una salida formateada correctamente, además de generar una petición que consume más recursos y tiempo.
 
 \bigskip
-Pese a todas esas desventajas, con un buen uso del cliente y una correcta prevención de fallos se conseguiría una funcionalidad mayor y llena de posibilidades. Pero como esta posibilidad no se ofrece en este trabajo, se hablará en el capítulo 8 sobre ella.
+Pese a todas esas desventajas, se podría permitir al usuario cambiar el código fuente, o añadir funcionalidades y con un buen uso por su parte y una correcta prevención de fallos se conseguiría una funcionalidad mayor y llena de posibilidades. Pero como esta posibilidad no se ofrece en este trabajo, se hablará en el capítulo 8 sobre ella.
 
 
 \newpage
@@ -270,7 +273,7 @@ Se probará para una tarjeta GeForce 840M \cite{geforce840m} y GeForce GXT 660 T
 Como nota hay que destacar el parámetro de \textit{capability} (capacidad), que será el que mayores restricciones o mejoras imponga en sus distintas versiones. Cuanto mayor sea esta, más funcionalidades podrá realizar y soportará más requisitos técnicos.
 
 \bigskip
-En la siguiente gráfica (Figura \ref{fig:grafico_benchmarks}) se verá la diferencia de ambas en benchmarks para medir procesamiento de gráficos (Parallax, MRender, Gravity y Splatting):
+En la siguiente gráfica (Figura \ref{fig:grafico_benchmarks}) se verá la diferencia de ambas en benchmarks para medir \underline{procesamiento de gráficos} (Parallax, MRender, Gravity y Splatting):
 
 \begin{figure}[h]
 	\centering
@@ -300,5 +303,5 @@ Y se ve que la tarjeta con mejores prestaciones pero peor capacidad (GeForce GTX
 \bigskip
 Como conclusión se llega a que a la hora de escoger el dispositivo a usar por el sistema para realizar los cómputos no sólo habrá que tener en cuenta los requisitos, si no que el factor de capacidad será decisivo para el rendimiento del cómputo y con ello del sistema.
 
-También que ambas producen buenos resultados en el sistema, por lo que, por ejemplo se podría usar cualquiera de las 2 en el sistema.
+También que ambas producen buenos resultados en el sistema, por lo que, se podría usar cualquiera en el sistema.
 
