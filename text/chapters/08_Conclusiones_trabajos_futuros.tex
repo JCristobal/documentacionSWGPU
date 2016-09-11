@@ -7,16 +7,29 @@
 
 Una vez realizado el trabajo, se verán los objetivos (citados en el capítulo 2) y su respectivo avance.
 
-\bigskip
-Respecto a las clases para lanzar un algoritmo genético se han logrado cumplir, reuniéndolas en el archivo ejecutable \textit{geneticAlgorithm}. Se ha desarrollado como un módulo independiente, para poder ser usado por cualquier servicio, y no ser dependiente del servicio web, controlando la entrada de parámetros y control de fallos.
 
-\bigskip
-También se ha creado la estructura del servicio web, de manera que sea accesible desde cualquier servidor web.
-Dicho servicio facilita la petición del algoritmo genético, y se obtendrán los resultados mediante el uso de la GPU del servidor.
+\begin{itemize}
+	
+	\item  \textit{Desarrollar el conjunto de clases que permita acceder de forma remota a un conjunto de recursos para la ejecución de algoritmos evolutivos paralelos.}
+	
+	Se han logrado cumplir, además reuniéndolas en el archivo ejecutable \textit{geneticAlgorithm}. Se ha desarrollado como un módulo independiente, para poder ser usado por cualquier servicio, y no ser dependiente del servicio web, controlando la entrada de parámetros y control de fallos.
+	
+	\item  \textit{Acceder a un recurso de computación remoto a través de un interfaz web.}
+	
+	También se ha creado un servicio web, de manera que sea accesible desde cualquier servidor web. Dicho servicio facilita la petición del algoritmo genético, y se obtendrán los resultados mediante el uso de la GPU del servidor.
+	
+	\item  \textit{Aprender a utilizar recursos de computación paralela de bajo coste como son las GPUs.}
+	
+	Para lograr este objetivo se ha analizado, probado y desarrollado mediante CUDA, aprovechando la computación paralela de una GPU y aprendiendo a usar y gestionar sus recursos.
+	
+	\item  \textit{Estudiar el rendimiento obtenido para esta interfaz web en comparación con otras alternativas.}
+	
+	El servicio se ha desplegado y probado en el servicio web, generando resultados sin necesidad de instalar software ni limitaciones técnicas, ventaja principal ante otras alternativas. Con la interfaz de usuario se logra una buena experiencia de usuario, y una mejora en el rendimiento, ya que se optimiza el uso de recursos mediante la GPU.
 
-\bigskip
-Se a publicado el servicio, en forma de \textit{beta}. Se encuentra accesible en
-\textcolor{blue}{\underline{\href{http://genmagic.ugr.es:8000}{www.genmagic.ugr.es:8000}}}, accesible dentro de la red de la UGR \cite{vpnugr}.
+	
+\end{itemize}	
+
+
 	
 
 \section{Trabajos futuros}

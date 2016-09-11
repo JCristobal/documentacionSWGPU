@@ -4,26 +4,28 @@
 \bigskip
 Un algoritmo es una serie de pasos organizados que describe el proceso que se debe seguir, para dar solución a un problema específico. A principios de la década de 1960, en 1962 John Henry Holland ideó una de las líneas más prometedoras de la inteligencia artificial, la de los algoritmos genéticos, y con su libro ``Adaptation in Natural and Artifical Systems`` en 1975 logró una mayor popularidad. 
 
-Son llamados así porque se inspiran en la evolución biológica y su base genético-molecular. Estos algoritmos hacen evolucionar una población de individuos sometiéndola a acciones aleatorias semejantes a las que actúan en la evolución biológica (mutaciones y recombinaciones genéticas), así como también a una selección de acuerdo con algún criterio, en función del cual se decide cuáles son los individuos más adaptados, que sobreviven, y cuáles los menos aptos, que son descartados.
+Estos algoritmos son llamados así porque se inspiran en la evolución biológica y su base genético-molecular. Estos algoritmos hacen evolucionar una población de individuos sometiéndola a acciones aleatorias semejantes a las que actúan en la evolución biológica (mutaciones y recombinaciones genéticas), así como también a una selección de acuerdo con algún criterio, en función del cual se decide cuáles son los individuos más adaptados, que sobreviven, y cuáles los menos aptos, que son descartados.
 
 \bigskip
-Para su funcionamiento (el de un algoritmo genético simple, llamado Canónico), al empezar necesita una codificación o representación del problema que se adecue al mismo y una función de ajuste o adaptación al problema. Durante la ejecución del algoritmo, los padres deben ser seleccionados para la reproducción, a continuación dichos padres seleccionados se cruzarán generando dos hijos, sobre cada uno de los cuales actuará un operador de mutación. El resultado de la combinación de las anteriores funciones será un conjunto de individuos (posibles soluciones al problema), los cuales en la evolución del algoritmo genético formarán parte de la siguiente población.
+Para su funcionamiento (el de un algoritmo genético simple, llamado Canónico), al empezar necesita una codificación o representación del problema que se adecue al mismo y una función de ajuste o adaptación al problema. Durante la ejecución del algoritmo, se seleccionan unos individuos para cruzarlos, y  al individuo que resulte de este cruce se le hará una mutación. El resultado será un conjunto de individuos (posibles soluciones al problema) que formarán parte de la siguiente población. El algoritmo repetirá el proceso hasta encontrar una solución óptima o las veces que se le indique.
 
 \bigskip
 Poseen multitud de aplicaciones, como pueden ser:
 
 \begin{itemize}
-	\item Diseño automatizado para la investigación de diseño de materiales, equipamiento industrial o sistemas de comercio en el sector financiero.
-	\item Construcción de árboles filogenéticos.
-	\item Diseño de sistemas de distribución de aguas.
-	\item Resolución de equilibrios en Teoría de juegos.
-	\item Análisis de expresión de genes.
+	\item Diseño automatizado para la investigación de diseño de materiales \cite{5586262}, equipamiento industrial o sistemas de comercio en el sector financiero.
+	\item Construcción de árboles filogenéticos. \cite{arbolesfilogeneticos}
+	\item Diseño de sistemas de distribución de aguas \cite{ditribucionagua}. 
+	\item Resolución de equilibrios en Teoría de juegos \cite{teoriajuegos}.
+	\item Análisis de expresión de genes \cite{analisisexpresiongenes}.
 \end{itemize}
 
 \bigskip
 Pueden resolver problemas de alta complejidad, pero esto suele traducirse en operaciones muy costosas en términos de tiempo y recursos. En la actualidad, por ejemplo, hay casos en los que recrear una simulación de la solución propuesta por una iteración puede durar varios días y consumir gran cantidad de procesamiento y recursos asociados.
 
 
+\bigskip
+Estos algoritmos consumen muchos recursos y estos recursos no siempre están disponibles o al alcance de todo el mundo. Por esta razón, este proyecto Fin de Máster propone hacer accesible recursos de computación de bajo coste y alta disponibilidad a usuarios que no tienen la posibilidad de pagar dicho servicio o que no los tienen disponibles en su máquina. Estos recursos de computación son las tarjetas gráficas programables o GPU \cite{gpgpu}. Las GPUs ponen a disposición de los usuarios un recurso de computación paralelo muy potente a un precio no muy elevado y están siendo en los últimos años una tendencia en la paralelización de los algoritmos genéticos. Esta tendencia permite el desarrollo de este trabajo Fin de Máster estableciendo un primer paso en el desarrollo de servicios web que permitan acceder a estos recursos y que puedan estar instalados en cualquier máquina de esta escuela, facilitando el acceso a los alumnos a estos recursos sin necesidad de estar presentes en las aulas.
 
 
 
@@ -34,11 +36,10 @@ Pueden resolver problemas de alta complejidad, pero esto suele traducirse en ope
 
 \begin{itemize}
 	
-	\item Se desarrollarán varias clases para lanzar algoritmos genéticos que aprovechen el cálculo paralelo de alguna arquitectura de cálculo especializada (más adelante se vera que se opta por CUDA).
-	
-	\item Además se desarrollará un servicio web que interactúe con ellas. Esa infraestructura que da soporte a las llamadas del servicio debe hacer uso de una GPU. Esto hará que dichos algoritmos genéticos sean más accesibles y fáciles de usar, ya que sólo tendrán que introducir los parámetros que se deseen y lanzar el algoritmo de manera intuitiva y sin necesidad de una preparación previa.
-	
-	\item Y se estudiará la posibilidad de publicar dicho servicio para que sea accesible por cualquier usuario de Internet.
+	\item  Desarrollar el conjunto de clases que permita acceder de forma remota a un conjunto de recursos para la ejecución de algoritmos evolutivos paralelos.
+	\item  Acceder a un recurso de computación remoto a través de un interfaz web.
+	\item  Aprender a utilizar recursos de computación paralela de bajo coste como son las GPUs
+	\item  Estudiar el rendimiento obtenido para esta interfaz web en comparación con otras alternativas.
 	
 \end{itemize}
 

@@ -4,17 +4,16 @@
 Los principios básicos de los algoritmos genéticos fueron establecidos por Holland (1975), y se encuentran bien descritos en varios textos a lo largo de los años, como los estudios de Goldberg (1989), Davis (1991), Michalewicz (1992) o Reeves (1993), afianzando los conceptos y permitiendo trabajar sobre una buena base a futuros investigadores.
 
 \bigskip
-Son muchos y muy variados los ámbitos en los que se usan los algoritmos genéticos. Sirven para crear componentes automovilísticos, analizar expresiones de genes o hasta desarrollar aprendizajes de comportamiento para robots.
+Son muchos y muy variados los ámbitos en los que se usan los algoritmos genéticos. Sirven para crear componentes automovilísticos, analizar expresiones de genes o hasta desarrollar aprendizajes de comportamiento para robots, por ejemplo. Incluso se usan en aquellos que otros métodos no consiguen resolver o tiene problemas, o dichos métodos se pueden llegar a conjuntar con los algoritmos genéticos para así mejorarlos.
 
 \bigskip
-El poder de los algoritmos genéticos proviene del hecho de que se trata de una técnica robusta y tratan con éxito una gran variedad de problemas provenientes de diferentes ámbitos, incluyendo aquellos en los que otros métodos encuentran dificultades. Si bien no se garantiza que el algoritmo genético encuentre la solución óptima del problema, existe evidencia empírica de que se encuentran soluciones de un nivel aceptable, en un tiempo competitivo con el resto de los algoritmos de optimización combinatoria. En el caso de que existan técnicas especializadas para resolver un determinado problema, lo más probable es que se superen al Algoritmo genético, tanto en rapidez como eficacia. El gran campo de aplicación de los algoritmos genéticos se relaciona con aquellos problemas para los cuales no existen técnicas especializadas. Incluso en el caso en que dichas técnicas existan, y funcionen bien, pueden efectuarse mejoras de las mismas conjuntándolas con los algoritmos genéticos.
+Aunque no se garantiza que el algoritmo genético encuentre la solución óptima del problema, éste encontrará soluciones de un nivel aceptable, en un tiempo competitivo con el resto de los algoritmos de optimización combinatoria. 
 
+\bigskip
 Esto hace que se estudie y se intente mejorar y optimizar dichos algoritmos, siendo un campo con mucha transcendencia en la actualidad.
 
 \bigskip
-Constan de varias partes, como la selección de candidatos, operadores de cruce, funciones de evaluación y optimización o mutación. En este trabajo nos centraremos en la parte de optimización, donde se evalúan los individuos generados y que serán posibles soluciones al problema.
-
-Existen multitud de funciones de optimización, pero nos centraremos en 2: Ackley y Rastrigin.
+Constan de varias partes, como la selección de candidatos, operadores de cruce, funciones de evaluación y optimización o mutación. En este trabajo nos centraremos en la parte de optimización, donde se evalúan los individuos generados y que serán posibles soluciones al problema. Existen multitud de funciones de optimización, pero nos centraremos en 2: Ackley y Rastrigin.
 
 \bigskip
 La función de Ackley se publicó por primera vez en ``A connectionist machine for genetic hillclimbing`` por David H. Ackley en 1987 y se extendió a la dimensión arbitraria en ``Evolutionary algorithms in theory and practice: evolution strategies, evolutionary programming, genetic algorithms`` por Thomas Bäck en 1996.
@@ -31,7 +30,6 @@ La función de Ackley se publicó por primera vez en ``A connectionist machine f
 \bigskip
 Años antes, en 1974, Rastringin en "Systems of extremal control" propone otra función de optimización, para ser generalizada en 1991 por Mühlenbein.
 
-
 \bigskip
 \begin{figure}[h]
 	\centering
@@ -44,6 +42,7 @@ Años antes, en 1974, Rastringin en "Systems of extremal control" propone otra f
 Este trabajo se centrará en estas 2 funciones de optimización, ofreciendo un algoritmo genético que pueda ser optimizado mediante Ackley o Rastrigin.
 
 
+
 \newpage
 \section{Actualidad}
 \bigskip
@@ -53,7 +52,7 @@ En la actualidad la mayoría de los usuarios que necesitan procesar un algoritmo
 Podemos encontrar algunos programas \cite{agpython} \cite{agjava} \cite{agmatlab} para ser ejecutados por el cliente, o servicios web que realizan algoritmos genéticos donde la mayoría son ejemplos o demostraciones de algoritmos genéticos y sus soluciones \cite{agandar} \cite{agcoche}.
 
 
-Pero ninguno usa la computación paralela aprovechando la potencia de las GPUs. Viendo que hay disponible en el ámbito de dicha paralelización vemos que hay grandes empresas que han lanzado lenguajes de programación enfocados a aprovechar el procesamiento mediante la GPU: CUDA \cite{nvidiacuda}, AMD OpenCL APP \cite{paralelizacionamd}, BrookGPU \cite{brookgpu}, PeakStream o RapidMind:
+Pero ninguno usa la computación paralela aprovechando la potencia de las GPUs. Viendo que hay disponible en el ámbito de dicha paralelización vemos que hay grandes empresas que han lanzado lenguajes de programación enfocados a aprovechar el procesamiento mediante la GPU: CUDA \cite{nvidiacuda}, AMD OpenCL APP \cite{paralelizacionamd}, BrookGPU \cite{brookgpu}, PeakStream \cite{peackstream} o RapidMind \cite{rapidmind}:
 
 \begin{itemize}
 	\item CUDA: arquitectura de cálculo paralelo de NVIDIA. Se basa en el lenguaje C y C++, por lo que, junto con la cantidad de dispositivos de la marca, existe una gran comunidad y documentación.
@@ -62,9 +61,9 @@ Pero ninguno usa la computación paralela aprovechando la potencia de las GPUs. 
 	
 	\item BrookGPU: programa (en versión \textit{beta}) de la Universidad de Stanford para aprovechar la paralelización en tarjetas gráficas AMD y NVIDIA. Para trabajar con el se usa una extensión de ANSI C.
 	
-	\item PeakStream era un programa para paralelizar el procesamiento con grandes rendimientos en tarjetas AMD, comprado por Google en 2007 \cite{peackstream}, y tras esto, a dejado de ofrecer mantenimiento.
+	\item PeakStream era un programa para paralelizar el procesamiento con grandes rendimientos en tarjetas AMD, comprado por Google en 2007 \cite{peackstreamcomprada}, y tras esto, a dejado de ofrecer mantenimiento.
 	
-	\item RapidMind, que tambíen se basa en C++, es comprada por Intel en 2009 y pasa a ser Intel Array Building Blocks \cite{rapidmind}, pero sigue estando en forma experimental. 
+	\item RapidMind, que tambíen se basa en C++, es comprada por Intel en 2009 y pasa a ser Intel Array Building Blocks \cite{rapidmindcomprada}, pero sigue estando en forma experimental. 
 	
 \end{itemize}
 
@@ -104,9 +103,8 @@ Con esto se puede ver que podemos encontrar servicios que realicen algoritmos ge
 \bigskip
 
 ¿Que usuarios necesitan computar algoritmos genéticos?
-Por ejemplo, cualquier estudiante que quiera comprobar los cambios en los resultados del algoritmo genético con distintos parámetros .
 
-¿Y además algoritmos que requieran mucha capacidad de cómputo? En principio el personal de investigación cumple con estas características. Junto con la potencia de cómputo y la accesibilidad que proporcionaremos simplificaríamos el trabajo de dicho personal. 
+Por ejemplo, cualquier estudiante que quiera comprobar los distintos resultados del algoritmo genético cambiando sus parámetros. También el personal de investigación trabaja con multitud de algoritmo genéticos, y con grandes consumos de recursos. Junto con la potencia de cómputo y la accesibilidad que proporcionaremos simplificaríamos el trabajo de dicho personal. 
 
 Además el servicio será accesible a cualquier usuario, y con su interfaz sencilla e intuitiva dichos usuarios no necesitarán una preparación especial para usarlo. 
 
