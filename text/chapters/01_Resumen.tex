@@ -1,25 +1,22 @@
 \chapter{Resumen}
 
 \section{Resumen y palabras clave}
-\noindent{\textbf{Palabras clave}: \textit{servicio web}, \textit{C++}, \textit{GPU},\textit{evaluación de algoritmos}, \textit{CUDA}.\\
+\noindent{\textbf{Palabras clave}: \textit{servicio web}, \textit{evaluación de algoritmos genéticos}, \textit{GPU}, \textit{CUDA}.\\
 
 
 \bigskip
-En este trabajo se aborda la creación de un conjunto de clases que permitan lanzar algoritmos genéticos y ser optimizados. Para un máximo rendimiento se paralelizarán los algoritmos, haciendo uso de una GPU.
+En este trabajo se abordará la creación de un conjunto de funcionalidades que permitan ejecutar algoritmos genéticos y ser optimizados. Para un máximo rendimiento se paralelizarán los algoritmos haciendo uso de una GPU. Acceder a esas funcionalidades será posible desde un servicio web que interactúe con ellas.
 
-Acceder a esas funcionalidades será posible desde un servicio web que interactue con dichas clases.
+\bigskip
+Al abordar en el proyecto se han encontrado un amplio y variado abanico de retos y problemas relacionados con el diseño, el campo de la inteligencia artificial, el desarrollo software con distintas tecnologías y la forma de conectarlas.
 
 
 \bigskip
-Para ello se implementará una infraestructura de un servicio web y la ampliaremos a un servicio web que haga uso de GPUs: dicho servicio llamará a la GPU para lanzar un algoritmo evolutivo, y usar una función de evaluación mediante el algoritmo de Ackley o Rastrigin.
-
-Esa infraestructura que da soporte a las llamadas del servicio usará la arquitectura de cálculo CUDA.
+Para resolverlo se implementa un servicio web, que se amplia a un servicio web que además hace uso de GPUs: dicho servicio llama a la GPU para ejecutar un algoritmo evolutivo, y usar una función de evaluación mediante el algoritmo de Ackley o Rastrigin. Esa infraestructura que da soporte a las llamadas del servicio usa la arquitectura de cálculo CUDA.
 
 
 \bigskip
-Al finalizar el trabajo se obtiene un servicio web que permite lanzar algoritmos genéticos, haciendo uso de la GPU de un servidor externo mediante CUDA.
-
-
+Al finalizar el trabajo se obtiene un servicio web que permite ejecutar algoritmos genéticos, haciendo uso de la GPU de un servidor externo mediante CUDA.
 
 
 
@@ -31,10 +28,23 @@ Al finalizar el trabajo se obtiene un servicio web que permite lanzar algoritmos
 %\autor\
 %\end{center}
 
-\section{Extended abstract and key words}
+\section{Abstract and key words}
  
- \noindent{\textbf{Key words}: \textit{web service}, \textit{C++}, \textit{GPU},\textit{ evaluation algorithms}, \textit{CUDA}.\\
+ \noindent{\textbf{Key words}: \textit{web service}, \textit{evaluation of genetic algorithms}, \textit{GPU}, \textit{CUDA}.\\
 
 
 \bigskip
-The main objective of this project is ...
+The objective of this proyect will be the creation of a group of functionalities which allows execute genetic algorithms and optimise them. They will be parallelized using a GPU for maximum performance. Access to these functionalities will be possible from a web service that interact with them.
+
+
+\bigskip
+While the project was implemented, a lot of challenges and problems have been found. They were related to the design, the subject of artificial intelligence, software development using different technologies and how to connect them.
+
+
+\bigskip
+A web service is implemented to make the system, and it extends to a web service that also makes use of GPUs: this service use the GPU to execute a genetic algorithm, and use a evaluation function (Ackley or Rastrigin function). The infrastructure that supports service calls use the computing architecture CUDA.
+
+
+\bigskip
+At the end of the project a web service that allows to run genetic algorithms is obtained. This service makes use of the GPU of an external server using CUDA.
+
